@@ -19,7 +19,6 @@ def sum_of_threes():
         sum_total = sum_total + i
     print("sum of threes is", sum_total)
 
-
 def multiplication_table():
     for i in range(1, 11):
         for j in range(1, 11):
@@ -42,14 +41,16 @@ def sum_squares():
     lower_range = eval(input("Enter lower range: "))
     upper_range = eval(input("Enter upper range: "))
     for i in range(lower_range, upper_range + 1):
-        square_sum = square_sum + (i ** 2)
+        square_sum = square_sum + (i * i)
     print(square_sum)
 
 
 def power():
     base = eval(input("Enter base: "))
     exponent = eval(input("Enter exponent: "))
-    result = base ** exponent
+    result = 1
+    for values in range(1, exponent + 1):
+        result = result * base
     print(exponent, "^", base, "=", result)
 
 
