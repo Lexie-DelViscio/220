@@ -1,12 +1,11 @@
 """
 Name: <Lexie DelViscio>
-<ProgramName>.py
+hw1.py
 
 Problem: <This program solves the ability to compute
 the results of basic functions easily through user input.>
 
 Certification of Authenticity:
-<include one of the following>
 <I certify that this assignment is entirely my own work.>
 """
 
@@ -49,7 +48,6 @@ def kilometers_to_miles():
     kilometers = eval(input("How many kilometers did you travel?"))
     miles = kilometers / 1.61
     print("That's", miles, "miles!")
-
 
 if __name__ == '__main__':
     pass
