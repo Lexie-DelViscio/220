@@ -1,6 +1,6 @@
 """
 Name: Lexie DelViscio
-<ProgramName>.py
+hw2.py
 
 Problem: This program contains functions that can be used in order to solve problems
 related to math in python. The program, although simple, provides five functions which
@@ -18,6 +18,7 @@ def sum_of_threes():
     for i in range(0, upper_bound + 1, 3):
         sum_total = sum_total + i
     print("sum of threes is", sum_total)
+
 
 def multiplication_table():
     for i in range(1, 11):
