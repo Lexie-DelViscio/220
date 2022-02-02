@@ -30,5 +30,5 @@ def traffic():
     print("Average number of vehicles per road: ", round((total_vehicles / roads_surveyed), 2))
 
 
-traffic()
+
 
