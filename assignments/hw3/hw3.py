@@ -1,6 +1,6 @@
 """
 Name: Lexie DelViscio
-hw3.py.py
+File Name: hw3.py
 
 Problem: This program utilizes for loops in order to calculate and return
 a variety of values including grade average, tip amount, square root, and
