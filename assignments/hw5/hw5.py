@@ -10,6 +10,7 @@ average word length in a sentence, and converting a normal sentence into pig lat
 
 Certification of Authenticity:
 I certify that this assignment is entirely my own work.
+
 """
 
 
