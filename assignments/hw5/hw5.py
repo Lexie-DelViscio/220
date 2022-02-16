@@ -2,10 +2,11 @@
 Name: Lexie DelViscio
 hw5.py
 
-Problem: This program contains functions which perform basic operations on strings and lists in order to return the
-desired output to the user. This includes placing names in reverse order, returning only the company name, returning the
-initials of every student in a class, returning a list of initials, printing every third character in of each word in a
-given string, calculating thw average word length in a sentence, and converting a normal sentence into pig latin.
+Problem: This program contains functions which perform basic operations on strings and lists
+in order to return the desired output to the user. This includes placing names in reverse order,
+returning only the company name, returning the initials of every student in a class, returning a
+list of initials, printing every third character in of each word in a given string, calculating the
+average word length in a sentence, and converting a normal sentence into pig latin.
 
 Certification of Authenticity:
 I certify that this assignment is entirely my own work.
@@ -58,33 +59,21 @@ def thirds():
     total_sliced_sentences = ""
     number_sentences = eval(input("enter the number of sentences:"))
     for i in range(number_sentences):
-        sentence = input("enter sentence:")
+        sentence = input("enter a sentence:")
         sliced_sentence = sentence[::3]
-        total_sliced_sentences = total_sliced_sentences + "\n" + sliced_sentence
+        total_sliced_sentences = total_sliced_sentences + sliced_sentence
     print(total_sliced_sentences)
-
-# ask on wednesday
-#Test expected output and input
-# 'hzddU RY XWp JR', 'LjHRp yBBoBTJ aMkVF q jRjAxh', 'W', 'vQ kMvy'
-# 'hdRX ', 'LRyoJMF jh', 'W', 'vky'
-
-#hdRX
-#LRyoJMF jh
-#W
-#vky
-
-# test saying its wrong, but its not???
 
 
 def word_average():
     words = input("enter a sentence:")
     words_list = words.split()
-    n = len(words_list)
+    number_of_words = len(words_list)
     total = 0
     for i in words_list:
         words_length = len(i)
         total = total + words_length
-    average_length = total / n
+    average_length = total / number_of_words
     print(average_length)
 
 
@@ -95,13 +84,10 @@ def pig_latin():
     for i in original_list:
         first_letter = i[0]
         words = i[1:]
-        ay = "ay "
-        pig_string = pig_string + words + first_letter + ay
+        end_of_word = "ay "
+        pig_string = pig_string + words + first_letter + end_of_word
         pig_string = pig_string.lower()
-    print(pig_string)
-
-# test also saying its wrong
-# but all expected and actual outputs line up
+    print(pig_string.rstrip())
 
 
 if __name__ == '__main__':
