@@ -1,13 +1,14 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Lexie DelViscio
+hw6.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: This program uses simple string and function methods in order to create
+functions that convert cash, encode a message with a set number key, encode a message
+using another word, calculate the area and volume of a sphere and calculate different
+sums.
 
 Certification of Authenticity:
-<include one of the following>
 I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 
 import math
@@ -57,7 +58,16 @@ def sum_n_cubes(number):
 def encode_better():
     message = input("enter a message:")
     key = input("enter a key:")
-    
+
+    output_string = ""
+    for i in range(len(message)):
+        character_shift = ord(message[i]) - 65
+        shift_value = ord(key[i % len(key)]) - 65
+        shift_value_mod = (character_shift + shift_value) % 58
+        new_letter = chr(shift_value_mod + 65)
+        output_string = output_string + new_letter
+    print(output_string)
+
 
 if __name__ == '__main__':
     # cash_converter()
