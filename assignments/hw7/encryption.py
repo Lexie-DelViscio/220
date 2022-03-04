@@ -9,7 +9,6 @@ def encode(message, key):
 
 
 def encode_better(message, key):
-    out_file = open("out_file.txt", 'w')
     output_string = ""
     for i in range(len(message)):
         character_shift = ord(message[i]) - 65

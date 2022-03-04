@@ -3,13 +3,14 @@ Name: Lexie DelViscio
 hw7.py
 
 Problem: This homework utilizes the ability to open files for the purpose of reading
-and writing to them as well as performing this skill while creating functions. This
-program also combines encoding with functions and opening, reading, and writing files.
+and writing to them as well as performing this skill while creating functions.
+This program also combines encoding with functions.
 
 Certification of Authenticity:
 I certify that this assignment is my own work.
 """
-from encryption import encode, encode_better
+
+from encryption import encode_better, encode
 
 
 def number_words(in_file_name, out_file_name):
