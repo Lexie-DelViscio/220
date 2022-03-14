@@ -54,12 +54,11 @@ def sum_of_squares(nums):
 def starter(weight, wins):
     if 150 <= weight < 160 and wins >= 5:
         return True
-    elif weight > 199:
+    if weight > 199:
         return True
-    elif wins > 20:
+    if wins > 20:
         return True
-    else:
-        return False
+    return False
 
 
 def leap_year(year):
