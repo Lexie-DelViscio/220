@@ -64,10 +64,9 @@ def starter(weight, wins):
 def leap_year(year):
     if year % 4 == 0 and year % 100 != 0:
         return True
-    elif year % 400 == 0:
+    if year % 400 == 0:
         return True
-    else:
-        return False
+    return False
 
 
 def circle_overlap():
@@ -89,14 +88,15 @@ def circle_overlap():
     center2 = win.getMouse()
     circumference_point2 = win.getMouse()
     radius2 = math.sqrt(
-        (center2.getX() - circumference_point2.getX()) ** 2 + (center2.getY() - circumference_point2.getY()) ** 2)
+        (center2.getX() - circumference_point2.getX()) ** 2 +
+        (center2.getY() - circumference_point2.getY()) ** 2)
     circle_two = Circle(center2, radius2)
     circle_two.setFill("light green")
     circle_two.draw(win)
 
     win.getMouse()
 
-    if did_overlap(circle_one, circle_two) == False:
+    if not did_overlap(circle_one, circle_two):
         message_point = Point(width / 2, height - 7)
         message = Text(message_point, "The circles do not overlap")
         message.draw(win)
@@ -105,7 +105,7 @@ def circle_overlap():
         message = Text(message_point, "The circles overlap")
         message.draw(win)
 
-    close_message_point = Point(width/2, height-5)
+    close_message_point = Point(width / 2, height - 5)
     close_message = Text(close_message_point, "click to close")
     close_message.draw(win)
     win.getMouse()
@@ -124,8 +124,7 @@ def did_overlap(circle_one, circle_two):
     distance = math.sqrt((x_2 - x_1) ** 2 + (y_2 - y_1) ** 2)
     if distance > r_1 + r_2:
         return False
-    else:
-        return True
+    return True
 
 
 if __name__ == '__main__':
