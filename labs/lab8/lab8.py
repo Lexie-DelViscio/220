@@ -2,6 +2,7 @@
 """
 Name: Lexie DelViscio
 File Name: lab8.py
+
 Problem Description: This programs utilizes random generation, function creation, graphics, conditionals,
 and loops in order to generate a simple bumper car game. This functions are all chained together and used
 within the overall function bumpers in order to run the game. The game runs until a user clicks out of it.
