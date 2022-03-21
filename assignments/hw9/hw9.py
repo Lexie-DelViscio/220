@@ -1,9 +1,21 @@
+from random import randint
+
+
 def get_words(file_name):
-    pass
+    file = open(file_name, 'r')
+    file_full = file.read()
+    words = []
+    for i in file_full:
+        words += [i]
+    return words
 
 
 def get_random_word(words):
-    pass
+    secret_word = randint(0, len(words)-1)
+    return "hello"
+
+
+
 
 
 def letter_in_secret_word(letter, secret_word):
