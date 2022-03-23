@@ -1,11 +1,18 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Lexie DelViscio
+File Name: lab9.py
+Problem Description: This program creates a function using multiple smaller defined functions so in order to create
+the game tictactoe.
+Certificate of Authenticity:
+I certify that this assignment is entirely my own work
 """
 
 
 def build_board():
-    pass
+    board = []
+    for i in range(1, 10):
+        board += [i]
+    return board
 
 
 def print_board(board):
@@ -37,31 +44,89 @@ def print_board(board):
 
 
 def is_legal(board, position):
-    pass
+    position_index = position - 1
+    return str(board[position_index]).isnumeric()
 
 
 def fill_spot(board, position, character):
-    pass
+    position_index = position - 1
+    character = character.strip().lower()
+    board[position_index] = character
 
 
 def winning_game(board):
-    pass
+    for i in range(0, len(board), 3):
+        if board[i] == board[i + 1] == board[i + 2]:
+            return True
+    for i in range(0, 3):
+        if board[i] == board[i + 3] == board[i + 6]:
+            return True
+    if board[0] == board[4] == board[8] or board[2] == board[4] == board[6]:
+        return True
+    else:
+        return False
 
 
 def game_over(board):
-    pass
+    if winning_game(board):
+        return True
+    for i in range(len(board)):
+        if is_legal(board, i + 1):
+            return False
+    return True
 
 
 def get_winner(board):
-    pass
+    x = 0
+    o = 0
+    for i in range(len(board)):
+        if board[i] == 'x':
+            x += 1
+        elif board[i] == 'o':
+            o += 1
+    if not game_over(board):
+        return None
+    elif x > o:
+        return 'x'
+    elif x == o:
+        return 'o'
 
 
 def play(board):
-    pass
+    print("Welcome to Tic Tac Toe!\n Enter a position to place your shape there on the board.\n "
+          "you win when you get three in a row!\nx's always go first!.")
+    playing_variable = "y"
+    character_string = 'xo'
+    character_index = 0
+    while playing_variable[0] == 'y' or playing_variable[0] == 'Y':
+    # hey! you checked my work in lab and couldnt figure out why it was still repeating after no was entered
+        while not game_over(board):
+            print_board(board)
+            position = eval(input("{}'s, choose a position: ".format(character_string[character_index])))
+            while not is_legal(board, position):
+                print('that position is not available choose a new position')
+                position = eval(input("{}'s, choose a position: ".format(character_string[character_index])))
+            else:
+                character = character_string[character_index]
+                fill_spot(board, position, character)
+            if winning_game(board):
+                print_board(board)
+                print(get_winner(board), "'s win!")
+                playing_variable = input("play again: ")
+                board = build_board()
+                character_index = 1
+            if game_over(board) and not winning_game(board):
+                print('Tie')
+                playing_variable = input("play again: ")
+                board = build_board()
+                character_index = 1
+            character_index = character_index + 1
+            character_index = character_index % 2
 
 
 def main():
-    pass
+    board = build_board()
+    play(board)
 
 
 if __name__ == '__main__':
