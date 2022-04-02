@@ -50,3 +50,7 @@ def weighted_average(in_file_name, out_file_name):
     out_file.write("Class average: " + str(class_average))
     in_file.close()
     out_file.close()
+
+
+
+
